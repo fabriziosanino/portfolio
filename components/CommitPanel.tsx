@@ -38,7 +38,7 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
         >
           {/* Header */}
           <div
-            className="flex-shrink-0 p-6 border-b"
+            className="flex-shrink-0 px-7 py-6 border-b"
             style={{ borderColor: "var(--border-2)" }}
           >
             {/* Branch badge */}
@@ -85,10 +85,10 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
 
             {/* git show header */}
             <div
-              className="text-xs mb-2 opacity-50"
+              className="text-xs mb-2 opacity-50 truncate"
               style={{ fontFamily: "var(--font-mono)", color: "var(--text-dim)" }}
             >
-              commit {commit.hash}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              commit {commit.hash}
             </div>
 
             <div
@@ -109,10 +109,17 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
           </div>
 
           {/* Body */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-5">
+          <div className="flex-1 overflow-y-auto px-7 py-6 space-y-5">
             {/* Role / company */}
             {(commit.detail.company || commit.detail.role) && (
-              <div>
+              <div
+                className="px-3 py-3 rounded-lg"
+                style={{
+                  border: `1px solid ${color}30`,
+                  borderLeft: `3px solid ${color}`,
+                  background: `${color}08`,
+                }}
+              >
                 {commit.detail.company && (
                   <div
                     className="text-sm font-semibold"
@@ -131,7 +138,7 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
                 )}
                 {commit.detail.location && (
                   <div
-                    className="text-xs mt-0.5 flex items-center gap-1 opacity-60"
+                    className="text-xs mt-1 flex items-center gap-1 opacity-60"
                     style={{ color: "var(--text-muted)" }}
                   >
                     <span>📍</span>
@@ -143,7 +150,7 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
 
             {/* Separator */}
             <div
-              className="text-xs opacity-30"
+              className="text-xs opacity-30 truncate"
               style={{ fontFamily: "var(--font-mono)", color: "var(--text-dim)" }}
             >
               ── diff ──────────────────────────────────
@@ -151,8 +158,12 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
 
             {/* Description */}
             <div
-              className="text-sm leading-relaxed"
-              style={{ color: "var(--text-muted)" }}
+              className="text-sm leading-relaxed px-3 py-3 rounded-lg"
+              style={{
+                color: "var(--text-muted)",
+                border: "1px solid var(--border-2)",
+                background: "var(--surface-2)",
+              }}
             >
               {commit.detail.description}
             </div>
@@ -216,7 +227,13 @@ export default function CommitPanel({ commit, onClose }: CommitPanelProps) {
 
             {/* GitHub link */}
             {commit.detail.link && (
-              <div>
+              <div
+                className="px-3 py-3 rounded-lg"
+                style={{
+                  border: "1px solid var(--border-2)",
+                  background: "var(--surface-2)",
+                }}
+              >
                 <div
                   className="text-xs mb-2 opacity-50"
                   style={{ fontFamily: "var(--font-mono)", color: "var(--text-dim)" }}

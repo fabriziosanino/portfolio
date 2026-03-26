@@ -26,11 +26,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="min-h-screen"
-            style={{ background: "var(--bg)" }}
+            className="min-h-screen px-8 sm:px-12 lg:px-16"
+            style={{ background: "transparent" }}
           >
             {/* ── Hero ── */}
-            <section className="min-h-screen grid-bg">
+            <section className="min-h-screen">
               {/* Ambient glow blobs */}
               <div
                 className="fixed top-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -51,7 +51,7 @@ export default function Home() {
                 }}
               />
 
-              <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 py-12 lg:py-16">
+              <div className="relative z-10 max-w-7xl mx-auto py-12 lg:py-16">
                 {/* Top bar */}
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
@@ -99,7 +99,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
-                    className="flex flex-col justify-start pt-2"
+                    className="flex flex-col justify-start pt-2 min-w-0"
                   >
                     {/* Avatar placeholder */}
                     <div
@@ -201,7 +201,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="overflow-visible"
+                    className="overflow-visible min-w-0"
                   >
                     <div
                       className="rounded-xl p-6 pb-10"
@@ -238,7 +238,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="hidden lg:block"
+                    className="hidden lg:block min-w-0"
                   >
                     <div
                       className="rounded-xl sticky top-8 overflow-hidden"

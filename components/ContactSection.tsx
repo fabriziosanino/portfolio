@@ -50,7 +50,7 @@ export default function ContactSection() {
     <section
       ref={ref}
       id="contact"
-      className="py-24 px-6 sm:px-10 lg:px-14"
+      className="py-24"
       style={{ borderTop: "1px solid var(--border-2)" }}
     >
       <div className="max-w-4xl mx-auto">
